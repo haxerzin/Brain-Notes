@@ -1,11 +1,8 @@
 # IRC- Internet Relay Chat
 
 * IRC is an open-source protocol for real-time text messaging and group communication developed by Jarkko Oikarinen in 1988.
-
 * IRC resembles the modern day Discord (Which was actually inspired from IRC).
-
 * IRC became one of the most used messaging system during the late 1990s and early 2000s. However with the advent of new proprietary and centralized messaging platforms IRC has lost most of it's userbase. 
-
 * IRC is still prevalent among open-source and tech enthusiasts and certain other communities.
 
 ## Advantages of IRC over other platforms and technologies
