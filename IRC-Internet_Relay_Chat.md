@@ -1,4 +1,5 @@
 # IRC- Internet Relay Chat
+
 * IRC is an open-source protocol for real-time text messaging and group communication developed by Jarkko Oikarinen in 1988.
 
 * IRC resembles the modern day Discord (Which was actually inspired from IRC).
@@ -7,18 +8,22 @@
 
 * IRC is still prevalent among open-source and tech enthusiasts and certain other communities.
 
-## Advantages of IRC over other platforms and technologies:
+## Advantages of IRC over other platforms and technologies
+
 * It's **open-source**. Anybody can self host an IRC server for their community.
+* 
 * Consumes far **less bandwidth** as compared to other platforms.
+* 
 * **Privacy**. Generally most public IRC servers do not require registration and allows traffic from Tor.
+* 
 * Very **low cost** self-hosted communication solution for companies, communities without compromising their privacy by relying on 3rd parties. 
+* 
 * **Flexibility**. With various available clients, IRC can be accessed from every platform and in every form, even from the command line.
 
-## Commonly used Terms:
-* **Server**- On IRC, a server refers to a computer system that runs an IRC server software and provides a platform for users to connect and communicate with each other.
-Example: _tantalum.libera.chat:6697_
-*  **Network**- On IRC, network refers to a collection of IRC servers that are connected to each other, allowing users to communicate with each other across different servers.
-Example: _Libera.Chat, DALnet_.
+## Commonly used Terms
+
+* **Server**- On IRC, a server refers to a computer system that runs an IRC server software and provides a platform for users to connect and communicate with each other. Example: _tantalum.libera.chat:6697_
+*  **Network**- On IRC, network refers to a collection of IRC servers that are connected to each other, allowing users to communicate with each other across different servers. Example: _Libera.Chat, DALnet_.
 * **Client**- Clients are the softwares that help the users to connect and communicate with the IRC server. Examples- _irssi (cli), Hexchat(gui)_.
 * **Channels**- Channels are rooms within the server dedicated to specific topics starting with a "#" symbol in their names. Example- _#gnu, #linux_.
 * **Nick**- Nick is the identifier of an user in the IRC network.
@@ -28,32 +33,43 @@ Example: _Libera.Chat, DALnet_.
 * **Operators (ops)**- Operators or ops in short, are people within a channel who have special privileges such as kicking, banning, inviting users and changing the topic of the channel.
 * **ASL**- ASL stands for "Age, Sex, Location". It's a commonly used abbreviation in the IRC community. You shall keep in mind that sharing such informationn may have negative consequences just like any other platforms.
 
-## Setting Up:
-### Installing an IRC client:
-#### My suggested clients:
+## Suggested Clients
+
 * irssi (cli)
 * HexChat (gui)
 
 You may choose a different client of your choice. But for this guide I will be uisng the two I mentioned.
 
-#### Installing irssi:
-* For Debian/Ubuntu based systems: ```$ sudo apt install irssi -y```
-* For Fedora/RedHat based systems: ```$ sudo dnf install irssi -y```
-* For Arch based systems:          ```$ sudo pacman -S irssi --noconfirm```
+### Installing irssi:
+* Debian/Ubuntu based systems:
+```bash
+sudo apt install irssi -y
+```
+* Fedora/RedHat based systems:
+```bash
+sudo dnf install irssi -y
+```
+* Arch based systems:
+```bash
+sudo pacman -S irssi --noconfirm
+```
 
-#### Installing Hexchat:
-* For Debian/Ubuntu based systems: ```$ sudo apt install hexchat -y```
-* For Fedora/RedHat based systems: ```$ sudo dnf install hexchat -y```
-* For Arch based systems:          ```$ sudo pacman -S hexchat --noconfirm```
+### Installing Hexchat:
+* Debian/Ubuntu based systems: ```sudo apt install hexchat -y```
+* Fedora/RedHat based systems: ```sudo dnf install hexchat -y```
+* Arch based systems:          ```sudo pacman -S hexchat --noconfirm```
 * Flatpak: ```sudo flatpak install io.github.Hexchat```
 
+## Client Usage
+
 ### Connecting to a Network:
-(For HexChat see the next part)
 
 A quick way to connect to an IRC network without setting up or configuring anything would be to use the cli client, **irssi**.
 Here's how you can do that:
 
-```$ irssi -n <nick> -c irc.libera.chat```
+```bash
+irssi -n <nick> -c irc.libera.chat
+```
 
 Replace **&lt;nick&gt;** with a nickname of your choice. 
 
@@ -61,19 +77,23 @@ In this case we are connecting to the **Libera.Chat** IRC network which is mostl
 
 Wait for few moments till the connection is established. Type the following command into the shell to join the "#gnu" channel (in this case):
 
-```/join #gnu```
+```
+/join #gnu
+```
 
 You can do the same to join various other channels like ```#linux```,```#programming```,```#math```.
 
-Press ```Ctrl + N``` on your keyboard to switch between joined channels.
+Press *Ctrl + N* on your keyboard to switch between joined channels.
 
-There are various **other commands** for various different purposes which will be mentioned later in this guide.
+There are various *other commands* for various different purposes which will be mentioned later in this guide.
 
 For now if you want to quit irssi (the client), type the following command into the IRC shell:
 
-```/exit```
+```
+/exit
+```
 
-### Configuring and Connecting via HexChat:
+### Configuring and Connecting via HexChat
 * Open HexChat
 * If you have installed it for the first time, it would open up a Network List on startup. On the bottom of the network list **check** the **"Skip network list on startup"** option.
 * Click the **+ Add** option in the Networks section of the Network List.
