@@ -11,13 +11,9 @@
 ## Advantages of IRC over other platforms and technologies
 
 * It's **open-source**. Anybody can self host an IRC server for their community.
-* 
 * Consumes far **less bandwidth** as compared to other platforms.
-* 
 * **Privacy**. Generally most public IRC servers do not require registration and allows traffic from Tor.
-* 
 * Very **low cost** self-hosted communication solution for companies, communities without compromising their privacy by relying on 3rd parties. 
-* 
 * **Flexibility**. With various available clients, IRC can be accessed from every platform and in every form, even from the command line.
 
 ## Commonly used Terms
