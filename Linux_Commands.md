@@ -2,6 +2,33 @@
 
 ## Using Extra Scripts/Tools
 
+### Measure progress of commands
+
+```bash
+sudo apt install pv
+```
+
+#### Example use with zip command:
+
+```bash
+pv filename.ext | zip > gparted.zip
+```
+
+### Split & Remerge large file
+
+#### Splt into 50MB files
+
+```bash
+# split large file into multiple files of a size
+split --bytes=20m file.ext
+```
+
+#### Remerge
+
+```bash
+cat x* > file.ext
+```
+
 ### Copy files & directories using rsync
 
 ```bash
