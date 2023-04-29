@@ -1,6 +1,6 @@
 # KVM Setup Guide
 
-- Bash script: https://github.com/xerohackcom/QuickKVM\
+- Bash script: https://github.com/haxerzin/QuickKVM/
 - KVM Optimization ( [[KVM Optimization]] )
 
 ## Host Setup
