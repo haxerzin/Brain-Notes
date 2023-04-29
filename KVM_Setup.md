@@ -6,7 +6,7 @@
 ## Host Setup
 Install following packages:
 ```bash
-sudo apt-get install qemu-kvm bridge-utils virt-manager qemu virt-viewer spice-vdagent
+sudo apt-get install qemu-kvm bridge-utils virt-manager qemu virt-viewer spice-vdagent libhugetlbfs-bin libvirt-clients qemu-utils virt-manager ovmf
 ```
 
 ### KVM without root access
@@ -46,9 +46,13 @@ echo "uri_default = \"qemu:///system\"" >> ~/.config/libvirt/libvirt.conf
 Restart the system!
 
 ## VM Setup (Windows)
+
 - Download virtio-win from: `https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/` 
-- Download Windows 10
-- Follow instructions: https://github.com/casualsnek/cassowary/blob/main/docs/1-virt-manager.md#creating-a-virtual-machine
+- Download Windows 11 iso from Microsoft official website
+
+### Windows 11 / 10
+
+- We have 2 ISO files: one is `virtio` and other is `Windows11`. We have to ensure that KVM is properly setup and virt-manager is running. Follow the steps in this article: https://haxerz.in/blog/article.php (TO EDIT LINK)
 
 ## Cassowary Setup (Win10)
 ### Inside Windows Guest
@@ -72,7 +76,7 @@ echo "PATH=\$PATH:$HOME/.local/bin" >> $HOME/.profile
 python3 -m cassowary -a
 ```
 
-## Optimization using Tuned
+## Optimize using Tuned
 
 In Linux host and guest, install the following:
 ```
@@ -105,8 +109,14 @@ sudo tuned-adm profile virtual-guest
 sudo apt install spice-vdagent
 ```
 
-## Converting QCOW2 to VDI
+## Convert QCOW2 to VDI
 
-```
+```bash
 qemu-img convert -O vdi /var/lib/libvirt/images/kali.qcow2 ~/Documents/kali.vdi
+```
+
+## Convert VDI to QCOW2
+
+```bash
+qemu-img convert -f vdi -O qcow2 ubuntu.vdi ubuntu.qcow2
 ```

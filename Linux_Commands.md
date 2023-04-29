@@ -2,6 +2,15 @@
 
 ## Using Extra Scripts/Tools
 
+### Copy files & directories using rsync
+
+```bash
+# single file
+rsync --progress /path/to/source-file.ext /path/to/destinationdir
+# directory
+rsync -r --progress /path/sourcedir /path/destinationdir
+```
+
 ### List contents of a file, filter by lines with specific word and add inside new file
 
 ```shell
