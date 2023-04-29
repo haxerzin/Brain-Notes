@@ -209,7 +209,7 @@ awk -F "/" '/^\// {print $NF}' /etc/shells | uniq | sort
 ### One line sys recon
 
 ```shell
-print "\n=== Routing Tables ===\n" && netstat -r && print "\n\n=== Ports Scan ===\n" && netstat -pn | grep -E "tcp|udp" && print "\n\n=== Active Connections ===\n" && netstat -a | grep -E "tcp|udp" | grep -i "https" && print "\n\n=== Active Front Processes ===\n" && ps | awk '{print $1"\t"$4}' && print "\n\n=== Active All Processes ===\n" && ps -aux | awk '{print $1"\t"$2"\t"$NF}' && print "\n\n=== App Users ===\n" && awk -F ":" '{print " | "$1" | "$6" | "$7" | "}' /etc/passwd && print "\n\n=== Installed Shells ===\n" && awk -F "/" '/^\// {print $NF}' /etc/shells | uniq | sort
+printf "\n=== Routing Tables ===\n" && netstat -r && printf "\n\n=== Ports Scan ===\n" && netstat -pn | grep -E "tcp|udp" && printf "\n\n=== Active Connections ===\n" && netstat -a | grep -E "tcp|udp" | grep -i "https" && printf "\n\n=== Active Front Processes ===\n" && ps | awk '{printf $1"\t"$4}' && printf "\n\n=== Active All Processes ===\n" && ps -aux | awk '{printf $1"\t"$2"\t"$NF}' && printf "\n\n=== App Users ===\n" && awk -F ":" '{printf " | "$1" | "$6" | "$7" | "}' /etc/passwd && printf "\n\n=== Installed Shells ===\n" && awk -F "/" '/^\// {printf $NF}' /etc/shells | uniq | sort
 ```
 
 ### Get server header and body using Netcat
