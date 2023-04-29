@@ -179,11 +179,34 @@ Add the following code inside:
 
 ## Xanmod Kernel
 
-### Base Kernel
-- Add repo: `echo 'deb http://deb.xanmod.org releases main' | sudo tee /etc/apt/sources.list.d/xanmod-kernel.list`
-- GPG Key: `wget -qO - https://dl.xanmod.org/gpg.key | sudo apt-key --keyring /etc/apt/trusted.gpg.d/xanmod-kernel.gpg add -`
-- Install *edge* version: `sudo apt update && sudo apt install linux-xanmod-edge`. Use `linux-xanmod` for bare metal builds for stable kernel.
+### Install Kernel
+
+- View the latest install instructions at: https://xanmod.org/#apt_repository
+- As of 2023, use the following commands one by one in terminal to install xanmod kernel:
+
+```bash
+# 1. Add PGP Key
+wget -qO - https://dl.xanmod.org/archive.key | sudo gpg --dearmor -o /usr/share/keyrings/xanmod-archive-keyring.gpg
+
+# 2. Add Repository
+echo 'deb [signed-by=/usr/share/keyrings/xanmod-archive-keyring.gpg] http://deb.xanmod.org releases main' | sudo tee /etc/apt/sources.list.d/xanmod-release.list
+
+# 3. Install Kernel
+sudo apt update && sudo apt install linux-xanmod-x64v3
+```
+
 - Reboot and check using: `neofetch` command in terminal
+
+### Which Version To Choose?
+
+- Xanmod comes in 3 flavors:
+    - Rolling Release (MAIN)
+    - Long Term Support (LTS)
+    - Stable Real-time (RT)
+
+- MAIN is the BEST option for most system and it's a rolling release kernel
+- DO NOT use RT unless you are using microcontrollers and similar stuff that requires "real-time clock as in 1700.00192883311hrs = 1700.00192883311hrs kind of accurate time". RT does not mean your kernel is faster. Infact, for everyday use it creates overhead. Flight systems and such critical infrastructure's "targetted" systems may use RT kernel.
+- LTS should be used by servers or if you have BULLSHIT VIDEO CARD LIKE NVIDIA. Because Nvidia drivers break with each latest kernel for many devices, especially GARBAGE manufacturers like HP, Lenovo, DELL (the most extreme garbage compatibility even with WIndoze OS) - statement true as of 2023
 
 ### Improvements
 
@@ -193,5 +216,7 @@ Add the following code inside:
 - Reboot
 
 #### FQ-PIE Queing Discipline
+
+- May improve network speed / latency improvements. However, it's debatable.
 - In terminal: `echo 'net.core.default_qdisc = fq_pie' | sudo tee /etc/sysctl.d/90-override.conf`
 - Reboot and check using: `tc qdisc show`
