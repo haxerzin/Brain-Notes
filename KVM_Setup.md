@@ -109,14 +109,22 @@ sudo tuned-adm profile virtual-guest
 sudo apt install spice-vdagent
 ```
 
-## Convert QCOW2 to VDI
+## Qemu Image Operations
+
+### Convert QCOW2 to VDI
 
 ```bash
 qemu-img convert -O vdi /var/lib/libvirt/images/kali.qcow2 ~/Documents/kali.vdi
 ```
 
-## Convert VDI to QCOW2
+### Convert VDI to QCOW2
 
 ```bash
 qemu-img convert -f vdi -O qcow2 ubuntu.vdi ubuntu.qcow2
+```
+
+### Expand Image SIze
+
+```bash
+qemu-img resize disk.qcow2 +10G
 ```

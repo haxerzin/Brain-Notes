@@ -1,5 +1,24 @@
 # KVM Optimization
 
+## CPU Optimization
+
+- Configurations = Copy Host CPU Configurations
+- Topology = Manually set CPU topology
+    - Socket = 1
+    - Cores = Half or more than host Logical host CPUs
+    - Threads = 1
+
+## Clock Optimization
+
+- In XML configuration, replace the associated `<clock>` config as below:
+
+```xml
+<clock offset="localtime">
+    <timer name="hpet" present="no"/>
+    <timer name="hypervclock" present="no"/>
+</clock>
+```
+
 ## CPU Pinning
 
 - It's not usually recommended to perform this unless you have a potatoe system. This also requires a multithreaded host. Spare yourself the hastle.
@@ -15,12 +34,12 @@ Depending on your CPU architecture, add the following options to the XML file:
 ```xml
 <iothreads>1</iothreads>
   <cputune>
-  	<vcpupin vcpu="0" cpuset="2"/>
-	<vcpupin vcpu="1" cpuset="3"/>
-	<vcpupin vcpu="2" cpuset="4"/>
-	<vcpupin vcpu="3" cpuset="5"/>
-	<emulatorpin cpuset="0-1"/>
-	<iothreadpin iothread="1" cpuset="0-1"/>
+    <vcpupin vcpu="0" cpuset="2"/>
+    <vcpupin vcpu="1" cpuset="3"/>
+    <vcpupin vcpu="2" cpuset="4"/>
+    <vcpupin vcpu="3" cpuset="5"/>
+    <emulatorpin cpuset="0-1"/>
+    <iothreadpin iothread="1" cpuset="0-1"/>
   </cputune>
 ```
 
