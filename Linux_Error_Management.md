@@ -2,6 +2,38 @@
 
 ## Debian Specific Commands
 
+### User not in sudoers to issue 'sudo' command
+
+This issue will usually occur in these common situations:
+
+1. You have installed GNU/Linux OS and logged in as a user
+2. You have created a new user and logged in as that user
+3. Your administrator has provided you with a user and restricted what you may run with 'sudo' command
+4. Your administrator does not want you to run 'sudo' or any elevated command
+
+In all of the above sitations, there is one single solution! We add your user to sudoers file.
+
+- Open the terminal and enter the SU session using the following command (you will require admin password for this to work):
+
+```bash
+su -
+```
+
+- You will be in root shell. You can confirm this by seeing: `root@` in your terminal
+- Add your user to sudoers group using:
+
+```bash
+sudo usermod -aG sudo your_username
+```
+
+- Open sudoers file using `sudo nano /etc/sudoers` and we will add our user here. Don't worry if there is a message saying "it's ment for view-only etc..". Just add the following at the end of the file and save using CRRL+S
+
+```bash
+your_username ALL=(ALL: ALL) ALL
+```
+
+- Exit root shell by closing the current terminal. Open a new terminal and sudo should work for the user.
+
 ### APT timezone or cert mismatch error (temporary fix) solution
 
 ```shell
