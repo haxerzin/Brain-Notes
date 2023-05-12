@@ -1,5 +1,76 @@
 # Linux Application Improvements
 
+## Remove Snaps from Ubuntu
+
+### Firefox Deb Package
+
+Before removing snaps, make sure to add Firefox PPA and config to stop snap reinstall by APT if you try ```sudo apt install firefox```. Follow the steps.
+
+#### Add Firefox PPA
+
+```bash
+sudo add-apt-repository ppa:mozillateam/ppa
+```
+
+#### Add Firefox Package Priority Config
+
+Paste the following in terminal at one go and press Enter:
+
+```bash
+echo '
+Package: *
+Pin: release o=LP-PPA-mozillateam
+Pin-Priority: 1001
+
+Package: firefox
+Pin: version 1:1snap1-0ubuntu2
+Pin-Priority: -1
+' | sudo tee /etc/apt/preferences.d/mozilla-firefox
+```
+
+#### Remove Firefox snap
+
+```bash
+sudo snap remove firefox
+```
+
+#### Install firefox using apt
+
+```bash
+sudo apt install firefox
+```
+
+#### Add unattended-upgrades config for Firefox
+
+In terminal: 
+
+```bash
+echo 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";' | sudo tee /etc/apt/apt.conf.d/51unattended-upgrades-firefox
+```
+
+### Remove snaps & snapd
+
+#### List installated packages
+
+```bash
+sudo snap list
+```
+
+#### Remove package one by one
+
+```bash
+sudo snap remove package_name
+```
+
+#### Remove snapd completely
+
+```bash
+sudo rm -rf /var/cache/snapd/
+sudo apt autoremove --purge snapd gnome-software-plugin-snap
+rm -fr ~/snap
+sudo apt-mark hold snapd
+```
+
 ## LibreOffice Security Improvements
 1. Remove personal information on save
 2. Ctrl+click required to open links
