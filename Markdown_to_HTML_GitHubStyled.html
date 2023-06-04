@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Markdown to HTML Example</title>
+  <style>
+    body{font-family:Arial, sans-serif;color:#333;line-height:1.6;padding:20px;max-width:900px;margin:0 auto;transition:all 0.3s ease;animation:fadeIn 1s}@keyframes fadeIn{0%{opacity:0}100%{opacity:1}}h1,h2,h3,h4,h5,h6{margin:10px 0}h1{font-size:2em;border-bottom:1px solid #ddd;padding-bottom:0.3em}h2{font-size:1.5em}h3{font-size:1.3em}ol,p,ul{margin-bottom:10px}a{color:#0366d6;text-decoration:none;transition:all 0.3s ease}a:hover{text-decoration:underline;color:#0366d6;transform:scale(1.05)}code{background-color:#f6f8fa;border-radius:3px;padding:0.2em 0.4em;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;font-size:85%}pre{background-color:#f6f8fa;padding:16px;overflow:auto;border-radius:6px}blockquote{padding:0 1em;color:#6a737d;border-left:0.25em solid #dfe2e5}.table{display:table;width:100%;border-collapse:collapse}.table td,.table th{padding:6px 13px;border:1px solid #dfe2e5}hr{border:0;border-top:1px solid #eee;border-bottom:0}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+</head>
+<body>
+    
+  <div id="output"></div>
+  
+  <script>
+    // Your JavaScript code goes here...
+    let markdown_content="";window.addEventListener('DOMContentLoaded',(event)=>{fetchMarkdownFile()});
+    async function fetchMarkdownFile() {
+        const url = "https://raw.githubusercontent.com/haxerzin/Brain-Notes/main/App_Optimizations.md"; // example remote md file
+        try{const response=await fetch(url);if(!response.ok){throw new Error(`HTTP error! status: ${response.status }`)}else{markdown_content=await response.text();var converter=new showdown.Converter(),text=markdown_content,html=converter.makeHtml(text);document.getElementById('output').innerHTML=html}}catch(error){console.error('There has been a problem with your fetch operation: ',error)}}
+  </script>
+</body>
+</html>
