@@ -9,7 +9,7 @@ ffuf -c -w /usr/share/wordlists/dirb/small.txt -u https://ffuf.io.fi/FUZZ
 ## Mass subdomain fuzzing
 
 ```bash
-cat domains_list.txt | while read line; do ffuf -c -w ~/Desktop/pays/FUZZMAX.txt -u https://FUZZ.$line -o fuzzed_subs.txt; done
+cat ~/RECON/usgov/doms.txt | while read line; do ffuf -c -t 100 -mc 200,204,301,302,307 -w ~/Desktop/pays/FUZZSUBS.txt -u https://FUZZ.$line -o fuzzed_subs.txt; done
 ```
 ## Recursive Scanning
 
