@@ -6,6 +6,11 @@
 ffuf -c -w /usr/share/wordlists/dirb/small.txt -u https://ffuf.io.fi/FUZZ
 ```
 
+## Mass subdomain fuzzing
+
+```bash
+cat domains_list.txt | while read line; do ffuf -c -w ~/Desktop/pays/FUZZMAX.txt -u https://FUZZ.$line -o fuzzed_subs.txt; done
+```
 ## Recursive Scanning
 
 ```bash
@@ -88,24 +93,8 @@ ffuf -c -w /path/to/wordlist -X POST -d "username=admin&password=FUZZ" -u https:
 ffuf -w wordlist.txt -X  PUT -u http://test.site/api/users/6 -H "Content-Type: application/json" -d "{'FUZZ':'test_val'}"
 ```
 
-## Proxying Response
-
-### Pass Success Commmands To BURP
+### Pass Success Commands To BURP
 
 ```bash
 ffuf -request ~/Desktop/request.txt -w ./wordlist.txt -replay-proxy http://127.0.0.1:8080
-```
-
-### Optimized command
-
-- colorize output
-- wordlist
-- greedy recurssion
-- verbose
-- depth 3
-- stop on >95% 403 forbidden
-- match 200,301,302,500
-
-```shell
-ffuf -c -w ~/Desktop/payloads/FUZZMAX.txt -recursion-strategy greedy -v -recursion -recursion-depth 3 -sf -o ~/Desktop/ffufscan.txt -u URL
 ```
