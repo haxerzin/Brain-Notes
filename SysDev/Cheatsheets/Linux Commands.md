@@ -7,11 +7,21 @@
 ```bash
 cat file.txt | xargs -I {} sh -c 'waybackpy --url {} --save; echo {}'
 ```
-### Download / wget multiple URLs in file in parallel
+
+### Download files in parallel
+
+- Install GNU Parallel:
 
 ```bash
-cat urls.txt | xargs -n 1 -P 100 sh -c wget -q
+sudo apt install parallel
 ```
+
+- Download shell command:
+
+```bash
+cat allfiles | parallel -j50 --timeout 2 --retries 2 wget -q -t 2
+```
+
 ### 7z ultra compression
 
 ```bash
@@ -24,6 +34,7 @@ sudo apt install -y p7zip-full
 ```shell
 7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on new_file_name.7z old_filename.txt
 ```
+
 ### Measure progress of commands
 
 ```bash
@@ -299,7 +310,6 @@ airodump-ng --band abg wlan0 / --essid AP_NAME / --bssid MAC_ADDRESS_OF_ORIGINAL
 Fuzzing for bypass: https://github.com/carlospolop/hacktricks/blob/master/pentesting-web/command-injection.md
 
 ```"dws?ap/c``t"e"/ tac" | rev```
-
 
 ### Command Injection filter bypass - blind
 

@@ -1,4 +1,4 @@
-# Bash Cheatsheet
+# Linux Shell Basics
 
 ## Debian Specific Commands
 
