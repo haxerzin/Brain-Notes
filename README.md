@@ -40,11 +40,11 @@
 #### Systems / Development
 
 - [x] Cheatsheets
-	- [x] [Bash Cheatsheet](https://github.com/haxerzin/Brain-Notes/blob/main/SysDev/Cheatsheets/Bash%20Cheatsheet.md)
 	- [x] [Docker Cheatsheet](https://github.com/haxerzin/Brain-Notes/blob/main/SysDev/Cheatsheets/Docker%20Cheatsheet.md)
 	- [x] [IRC - Internet Relay Chat - Guide](https://github.com/haxerzin/Brain-Notes/blob/main/SysDev/Cheatsheets/IRC%20Guide.md)
 	- [x] [Linux Commands](https://github.com/haxerzin/Brain-Notes/blob/main/SysDev/Cheatsheets/Linux%20Commands.md)
 	- [x] [Linux Error Management](https://github.com/haxerzin/Brain-Notes/blob/main/SysDev/Cheatsheets/Linux%20Error%20Management.md)
+	- [x] [Linux Shell Basics](https://github.com/haxerzin/Brain-Notes/blob/main/SysDev/Cheatsheets/Linux%20Shell%20Basics.md)
 	- [x] [Python Style Guide](https://github.com/haxerzin/Brain-Notes/blob/main/SysDev/Cheatsheets/Python%20Style%20Guide.md)
 	- [x] [Regex Cheatsheet](https://github.com/haxerzin/Brain-Notes/blob/main/SysDev/Cheatsheets/Regex%20Cheatsheet.md)
 - [x] .NET Framework WinForms
