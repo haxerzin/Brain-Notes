@@ -119,6 +119,65 @@ For now if you want to quit irssi (the client), type the following command into 
 * Block/Ignore someone's messages: ```/ignore <nick>```. ```/unignore <nick>``` to revert.
 * Set yourself away: ```/away <away message>```. To revert again use ```/away```.
 
-#### Contributor / Thanks To
+
+### Common Commands
+
+| Command               | Description                                   |
+|-----------------------|-----------------------------------------------|
+| /join #channel        | Join a channel                               |
+| /part #channel        | Leave a channel                              |
+| /msg nickname message| Send a private message to a user              |
+| /nick new_nickname    | Change your nickname                         |
+| /me action            | Send an action or emote message              |
+| /away [message]       | Set an away message or remove away status    |
+| /whois nickname       | Get information about a user                 |
+| /list                | List all available channels                  |
+| /invite nickname #channel | Invite a user to a channel               |
+| /quit [message]       | Quit the IRC server with an optional message |
+| /topic #channel topic | Set or view the topic of a channel           |
+| /ignore nickname      | Ignore messages from a user                  |
+| /unignore nickname    | Stop ignoring messages from a user           |
+| /kick #channel user [reason] | Kick a user from a channel            |
+| /mode #channel +m     | Set the channel to moderated mode            |
+| /mode #channel +i     | Set the channel to invite-only mode          |
+| /mode #channel +s     | Set the channel to secret mode               |
+| /mode #channel +t     | Set the channel to topic-only mode           |
+| /mode #channel +n     | Set the channel to no external messages mode |
+| /mode #channel +p     | Set the channel to private mode              |
+| /mode #channel +k key | Set a key to join the channel                |
+| /mode #channel +l limit | Set a user limit for the channel           |
+| /mode #channel -m     | Remove moderated mode from the channel       |
+| /mode #channel -i     | Remove invite-only mode from the channel     |
+| /mode #channel -s     | Remove secret mode from the channel          |
+| /mode #channel -t     | Remove topic-only mode from the channel      |
+| /mode #channel -n     | Remove no external messages mode from channel|
+| /mode #channel -p     | Remove private mode from the channel         |
+| /mode #channel -k     | Remove the key from the channel              |
+| /mode #channel -l     | Remove the user limit from the channel       |
+| /op #channel user     | Give operator status to a user in a channel  |
+| /deop #channel user   | Remove operator status from a user           |
+| /voice #channel user  | Give voice status to a user in a channel     |
+| /devoice #channel user| Remove voice status from a user              |
+| /ban #channel user    | Ban a user from a channel                    |
+| /unban #channel user  | Unban a user from a channel                  |
+| /mute #channel user   | Mute a user in a channel                     |
+| /unmute #channel user | Remove mute from a user in a channel          |
+| /query nickname       | Open a private message window with a user    |
+| /names #channel       | List users in a channel                      |
+| /away                | Set your status as away                      |
+| /clear                | Clear the chat window                        |
+| /help or /?           | Get help on available commands               |
+| /connect server port  | Connect to a specific server and port        |
+| /disconnect           | Disconnect from the server                   |
+| /quit                | Quit the IRC client                          |
+| /raw raw_command     | Send a raw command to the server             |
+| /who channel          | List users in a channel                      |
+| /query nickname       | Start a private chat with a user             |
+| /notice nickname message| Send a notice message to a user          |
+| /ping nickname        | Send a PING message to check user's presence |
+| /pong nickname        | Send a PONG response to a PING message      |
+
+
+# Contributor / Thanks To
 
 - [fury999io](https://github.com/fury999io)
