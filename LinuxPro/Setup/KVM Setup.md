@@ -1,16 +1,25 @@
 # KVM Setup Guide
 
-- Bash script: https://github.com/haxerzin/QuickKVM/
+- Automated Setup script: https://github.com/haxerzin/QuickKVM/
 - KVM Optimization ( [[KVM Optimization]] )
 
 ## Host Setup
+
+- It's better to use https://github.com/haxerzin/QuickKVM/ instead of manually doing all these steps.
+- DO NOT enter root terminal. Being in root terminal to avoid typing 'sudo' makes you dumb. It breaks the architecture of most apps. GNU/Linux developers intend using sudo with their apps for a reason.
+
 Install following packages:
+
 ```bash
-sudo apt -y install qemu-kvm bridge-utils virt-manager qemu virt-viewer spice-vdagent libhugetlbfs-bin libvirt-clients qemu-utils virt-manager ovmf
+sudo apt -y install qemu-kvm bridge-utils qemu virt-manager virt-viewer spice-vdagent libhugetlbfs-bin libvirt-clients qemu-utils virt-manager ovmf
 ```
 
+- If you face error for 'qemu' or some package not found, remove the package from install list and rerun install. This issue occurs depending on distributions, it's minor stuff. Qemu will get installed.
+
 ### KVM without root access
+
 Type the following one by one into terminal:
+
 ```
 sudo sed -i "s/#user = \"root\"/user = \"$(id -un)\"/g" /etc/libvirt/qemu.conf
 
@@ -26,7 +35,9 @@ sudo ln -s /etc/apparmor.d/usr.sbin.libvirtd /etc/apparmor.d/disable/
 ```
 
 ### Making networking available to KVM
+
 Type the following commands into terminal:
+
 ```
 wget https://gitlab.com/apparmor/apparmor/-/blob/master/profiles/apparmor.d/usr.sbin.dnsmasq -O ~/usr.sbin.dnsmasq
 
@@ -36,7 +47,9 @@ sudo sed -i "s/\/usr\/libexec\/libvirt_leaseshelper m,/\/usr\/libexec\/libvirt_l
 ```
 
 ### Create libvirt config
+
 Type the following in terminal:
+
 ```
 mkdir -p ~/.config/libvirt
 
@@ -55,12 +68,15 @@ Restart the system!
 - We have 2 ISO files: one is `virtio` and other is `Windows11`. We have to ensure that KVM is properly setup and virt-manager is running. Follow the steps in this article: https://haxerz.in/blog/article.php (TO EDIT LINK)
 
 ## Cassowary Setup (Win10)
+
 ### Inside Windows Guest
+
 - Turn on Remote Desktop using Settings/
 - Download and extract ZIP: https://github.com/casualsnek/cassowary/releases/
 - Click setup.bat
 
 ### Inside Linux Host
+
 Download .whl file: https://github.com/casualsnek/cassowary/releases/ & open terminal in the location.
 
 Type the following commands in terminal:
@@ -105,6 +121,7 @@ sudo tuned-adm profile virtual-guest
 ```
 
 #### Enable clipboard on Linux Guest
+
 ```bash
 sudo apt install spice-vdagent
 ```
