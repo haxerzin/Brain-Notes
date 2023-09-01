@@ -2,6 +2,12 @@
 
 ## Using Extra Scripts/Tools
 
+### Bulk rename all files in current directory & truncate certain characters
+
+```bash
+for file in *; do mv "$file" "$(echo $file | tr -d '{}')"; done
+```
+
 ### Save multiple URL to wayback machine
 
 ```bash
