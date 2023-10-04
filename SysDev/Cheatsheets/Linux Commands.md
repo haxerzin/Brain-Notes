@@ -28,17 +28,38 @@ sudo apt install parallel
 cat allfiles | parallel -j50 --timeout 2 --retries 2 wget -q -t 2
 ```
 
-### 7z ultra compression
+### 7z ultra
 
 ```bash
 sudo apt install -y p7zip-full
 ```
+
+#### Folder Compression
+
 ```bash
 7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on new_file_name.7z existing_directory_name
 ```
 
-```shell
+#### File Compression
+
+```bash
 7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on new_file_name.7z old_filename.txt
+```
+
+#### Compression with 20 CPU Threads
+
+Please manually check how many max threads your CPU can handle!
+
+```bash
+7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on -mmt=20 output.7z folder_or_file
+```
+
+#### Extraction
+
+Please manually check how many max threads your CPU can handle!
+
+```bash
+7z x -mmt=20 archive_filename.7z
 ```
 
 ### Measure progress of commands
