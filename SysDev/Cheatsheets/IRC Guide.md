@@ -176,6 +176,7 @@ For now if you want to quit irssi (the client), type the following command into 
 | /notice nickname message| Send a notice message to a user          |
 | /ping nickname        | Send a PING message to check user's presence |
 | /pong nickname        | Send a PONG response to a PING message      |
+| /lusers               | Get the number of users connected to a server or network |
 
 
 # Contributor / Thanks To
