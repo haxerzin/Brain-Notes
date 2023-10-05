@@ -1,4 +1,4 @@
-# Linux Commands Guide
+# GNU/Linux Commands Guide
 
 ## Using Extra Scripts/Tools
 

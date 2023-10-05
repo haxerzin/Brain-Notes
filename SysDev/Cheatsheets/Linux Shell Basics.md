@@ -1,4 +1,4 @@
-# Linux Shell Basics
+# GNU/Linux Shell Basics
 
 ## Debian Specific Commands
 
